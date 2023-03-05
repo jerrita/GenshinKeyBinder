@@ -9,12 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="build.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NAudio" Version="2.1.0" />
     <PackageReference Include="NAudio.Midi" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include=".github\workflow\build.yaml" />
+    <None Include=".github\workflows\build.yaml" />
   </ItemGroup>
 
 </Project>
