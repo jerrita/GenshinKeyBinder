@@ -13,4 +13,8 @@
     <PackageReference Include="NAudio.Midi" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include=".github\workflow\build.yaml" />
+  </ItemGroup>
+
 </Project>
