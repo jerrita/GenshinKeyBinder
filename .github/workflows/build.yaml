@@ -28,10 +28,10 @@ jobs:
       run: dotnet build -c Release
 
     - name: Compress
-      run: Compress-Archive -Path .\bin\Release\net6.0-windows\* -DestinationPath GenshinMidiBinder.zip
+      run: Compress-Archive -Path .\bin\Release\net6.0-*\* -DestinationPath GenshinMidiBinder.zip
 
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: 'v0.1'
+        tag_name: 'v0.2'
         files: GenshinMidiBinder.zip
