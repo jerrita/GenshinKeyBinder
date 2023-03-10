@@ -48,13 +48,18 @@ namespace GenshinMidiBinder
                     Logic.Stop(midiIn!);
                     button1.Text = "Start";
                     running = false;
+                    numericUpDown1.Enabled = true;
                     textBox1.Text = "";
                 }
                 else
                 {
-                    midiIn = new MidiIn(deviceNo);
+                    if (midiIn == null)
+                    {
+                        midiIn = new MidiIn(deviceNo);
+                    }
                     Logic.Run(textBox1, mode, midiIn);
                     running = true;
+                    numericUpDown1.Enabled = false;
                     button1.Text = "Stop";
                 }
             }
@@ -85,6 +90,11 @@ namespace GenshinMidiBinder
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+            if (midiIn != null)
+            {
+                midiIn = null;
+            }
+
             button1.Focus();
         }
     }
